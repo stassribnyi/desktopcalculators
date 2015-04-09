@@ -1,0 +1,5 @@
+c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\bin\Debug\Octagon.dll
+c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\bin\Debug\Octagon.pdb
+c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\obj\Debug\Octagon.csprojResolveAssemblyReference.cache
+c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\obj\Debug\Octagon.dll
+c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\obj\Debug\Octagon.pdb

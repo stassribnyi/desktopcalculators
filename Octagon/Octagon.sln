@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon", "Octagon\Octagon.csproj", "{C0E2327B-EBDD-4352-9F11-836D1BC78BF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Calc", "OOP_Calc\OOP_Calc.csproj", "{A17E57D9-86FC-4B60-8A36-00C29125ADE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command_Calc", "Command_Calc\Command_Calc.csproj", "{AC77DAD3-7A88-4F15-8EB7-0BC8E532F49B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0E2327B-EBDD-4352-9F11-836D1BC78BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E2327B-EBDD-4352-9F11-836D1BC78BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E2327B-EBDD-4352-9F11-836D1BC78BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E2327B-EBDD-4352-9F11-836D1BC78BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17E57D9-86FC-4B60-8A36-00C29125ADE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17E57D9-86FC-4B60-8A36-00C29125ADE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17E57D9-86FC-4B60-8A36-00C29125ADE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17E57D9-86FC-4B60-8A36-00C29125ADE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC77DAD3-7A88-4F15-8EB7-0BC8E532F49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC77DAD3-7A88-4F15-8EB7-0BC8E532F49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC77DAD3-7A88-4F15-8EB7-0BC8E532F49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC77DAD3-7A88-4F15-8EB7-0BC8E532F49B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
