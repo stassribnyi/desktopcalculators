@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Octagon;
+using OOP_Calc;
 
 namespace Strategy
 {
@@ -20,9 +10,46 @@ namespace Strategy
     /// </summary>
     public partial class MainWindow : Window
     {
+        private CalcMemory _calcMemory = new CalcMemory();
+
         public MainWindow()
         {
             InitializeComponent();
+            SymbLabel.Content = Shell.GetSymbols();
+            MemLabel.Content = _calcMemory.Memory;
+        }
+
+        private void Deside(object sender, RoutedEventArgs e)
+        {
+            ExpressionBox.Text = Shell.GetResult(ExpressionBox.Text).ToString();
+        }
+        private void MR(object sender, RoutedEventArgs e)
+        {
+            ExpressionBox.Text = _calcMemory.Memory.ToString();
+        }
+        private void MS(object sender, RoutedEventArgs e)
+        {
+            Deside(sender, e);
+            MemLabel.Content = ExpressionBox.Text;
+            _calcMemory.Memory = Convert.ToDouble(ExpressionBox.Text);
+        }
+        private void MC(object sender, RoutedEventArgs e)
+        {
+            _calcMemory.Memory = 0;
+            MemLabel.Content = _calcMemory.Memory;
+        }
+        private void MP(object sender, RoutedEventArgs e)
+        {
+            Deside(sender, e);
+            _calcMemory.Memory += Convert.ToDouble(ExpressionBox.Text);
+            MemLabel.Content = _calcMemory.Memory;
+        }
+        private void MM(object sender, RoutedEventArgs e)
+        {
+            Deside(sender, e);
+            _calcMemory.Memory -= Convert.ToDouble(ExpressionBox.Text);
+            MemLabel.Content = _calcMemory.Memory;
+
         }
     }
 }

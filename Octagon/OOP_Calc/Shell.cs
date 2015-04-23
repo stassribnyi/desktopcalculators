@@ -1,13 +1,11 @@
-﻿using System;
-using System.Windows.Documents;
-using Octagon;
+﻿using Octagon;
 using Octagon.CalculatorCore;
 using Octagon.Solvers;
 using System.Text;
 
 namespace OOP_Calc
 {
-    internal static class Shell
+    public static class Shell
     {
         private static readonly ICalculator<double> _calc = new BaseCalculator();
 

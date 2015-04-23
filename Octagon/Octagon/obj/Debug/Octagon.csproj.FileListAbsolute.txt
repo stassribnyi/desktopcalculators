@@ -3,8 +3,8 @@ c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\bin\Debug\Oc
 c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\obj\Debug\Octagon.csprojResolveAssemblyReference.cache
 c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\obj\Debug\Octagon.dll
 c:\users\stas\documents\visual studio 2013\Projects\Octagon\Octagon\obj\Debug\Octagon.pdb
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Debug\Octagon.csprojResolveAssemblyReference.cache
 C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Debug\Octagon.dll
 C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Debug\Octagon.pdb
 C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\bin\Debug\Octagon.dll
 C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\bin\Debug\Octagon.pdb
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Debug\Octagon.csprojResolveAssemblyReference.cache

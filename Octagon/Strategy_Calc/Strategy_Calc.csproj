@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5E038B7F-8A28-467E-B8ED-2821803CB95D}</ProjectGuid>
+    <ProjectGuid>{6503DA39-2C5A-41EE-B36A-F759CED8729F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Strategy</RootNamespace>
-    <AssemblyName>Strategy</AssemblyName>
+    <RootNamespace>Strategy_Calc</RootNamespace>
+    <AssemblyName>Strategy_Calc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ControlExpression.cs" />
     <Compile Include="Strategy\Strategy.cs" />
     <Compile Include="Validator.cs" />
     <Page Include="MainWindow.xaml">
@@ -94,6 +95,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Octagon\Octagon.csproj">
+      <Project>{c0e2327b-ebdd-4352-9f11-836d1bc78bf7}</Project>
+      <Name>Octagon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OOP_Calc\OOP_Calc.csproj">
+      <Project>{a17e57d9-86fc-4b60-8a36-00c29125ade4}</Project>
+      <Name>OOP_Calc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
