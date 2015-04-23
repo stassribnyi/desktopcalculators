@@ -23,13 +23,13 @@ namespace Octagon
         
         public BaseCalculator()
         {
-            _operatorFunc.Add("(", new Operator<double>() { Priority = 0 });
-            _operatorFunc.Add(")", new Operator<double>() { Priority = 0 });
-            _operatorFunc.Add("+", new Operator<double>() { Priority = 1, OperatorFunction = Addition });
-            _operatorFunc.Add("-", new Operator<double>() { Priority = 1, OperatorFunction = Subtraction });
-            _operatorFunc.Add("*", new Operator<double>() { Priority = 2, OperatorFunction = Multiplication });
-            _operatorFunc.Add("/", new Operator<double>() { Priority = 2, OperatorFunction = Division });
-            _operatorFunc.Add("^", new Operator<double>() { Priority = 3, OperatorFunction = Power });
+            _operatorFunc.Add("(", new Operator<double> { Priority = 0 });
+            _operatorFunc.Add(")", new Operator<double> { Priority = 0 });
+            _operatorFunc.Add("+", new Operator<double> { Priority = 1, OperatorFunction = Addition });
+            _operatorFunc.Add("-", new Operator<double> { Priority = 1, OperatorFunction = Subtraction });
+            _operatorFunc.Add("*", new Operator<double> { Priority = 2, OperatorFunction = Multiplication });
+            _operatorFunc.Add("/", new Operator<double> { Priority = 2, OperatorFunction = Division });
+            _operatorFunc.Add("^", new Operator<double> { Priority = 3, OperatorFunction = Power });
         }
 
         public double Addition(params double[] values)

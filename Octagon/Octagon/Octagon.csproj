@@ -42,7 +42,9 @@
     <Compile Include="CalculatorCore\IBase.cs" />
     <Compile Include="CalculatorCore\ICalculator.cs" />
     <Compile Include="CalculatorCore\ILogarithmic.cs" />
+    <Compile Include="CalculatorCore\IMemorizeble.cs" />
     <Compile Include="CalculatorCore\ITrigonometric.cs" />
+    <Compile Include="CalcMemory.cs" />
     <Compile Include="Operator.cs" />
     <Compile Include="Parser\IParseble.cs" />
     <Compile Include="Parser\PolishReverseNotation\PolishReverseNotation.cs" />

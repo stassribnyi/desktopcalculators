@@ -1,0 +1,15 @@
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\Command_Calc.csprojResolveAssemblyReference.cache
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\MainWindow.baml
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\MainWindow.g.cs
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\App.g.cs
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\Command_Calc_MarkupCompile.cache
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\Command_Calc.g.resources
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\Command_Calc.Properties.Resources.resources
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\Command_Calc.csproj.GenerateResource.Cache
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\bin\Debug\Command_Calc.exe.config
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\bin\Debug\Command_Calc.exe
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\bin\Debug\Command_Calc.pdb
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\bin\Debug\Octagon.dll
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\bin\Debug\Octagon.pdb
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\Command_Calc.exe
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Command_Calc\obj\Debug\Command_Calc.pdb
