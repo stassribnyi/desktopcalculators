@@ -45,6 +45,10 @@
     <Compile Include="CalculatorCore\IMemorizeble.cs" />
     <Compile Include="CalculatorCore\ITrigonometric.cs" />
     <Compile Include="CalcMemory.cs" />
+    <Compile Include="DataModels\IParseble.cs" />
+    <Compile Include="DataModels\IServices.cs" />
+    <Compile Include="DataModels\UserHistory.cs" />
+    <Compile Include="DataModels\UserMemory.cs" />
     <Compile Include="Operator.cs" />
     <Compile Include="Parser\IParseble.cs" />
     <Compile Include="Parser\PolishReverseNotation\PolishReverseNotation.cs" />

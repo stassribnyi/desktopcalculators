@@ -12,4 +12,15 @@ namespace Octagon.DataModels
 
         List<T> Select();
     }
+
+    public interface IServices
+    {
+        void Create(object item);
+
+        void Update(object item);
+
+        void Delete(object item);
+
+        List<object> Select();
+    }
 }
