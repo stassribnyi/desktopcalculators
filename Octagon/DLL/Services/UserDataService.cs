@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DLL.Repository;
+﻿using DLL.Repository;
 using Octagon.DataModels;
+using System;
+using System.Data;
 
 namespace DLL.Services
 {
     public class UserDataService : BaseRepository
     {
-        public void Create(UserMemory userMemory, UserHistory userHistory)
+        public void Create(UserMemoryModel userMemory, UserHistoryModel userHistory)
         {
             using (var connection = GetConnection())
             {
@@ -66,7 +61,7 @@ namespace DLL.Services
             }
         }
 
-        public void Update(UserMemory userMemory, UserHistory userHistory)
+        public void Update(UserMemoryModel userMemory, UserHistoryModel userHistory)
         {
             using (var connection = GetConnection())
             {
@@ -126,7 +121,7 @@ namespace DLL.Services
             }
         }
 
-        public void Delete(UserMemory userMemory, UserHistory userHistory)
+        public void Delete(UserMemoryModel userMemory, UserHistoryModel userHistory)
         {
             using (var connection = GetConnection())
             {

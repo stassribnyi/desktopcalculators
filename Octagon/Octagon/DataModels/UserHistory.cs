@@ -2,11 +2,11 @@
 
 namespace Octagon.DataModels
 {
-    public class UserHistory : IParseble
+    public class UserHistoryModel : IParseble
     {
         public int HistoryId { get; set; }
 
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         public string Expression { get; set; }
 

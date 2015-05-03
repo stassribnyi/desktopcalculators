@@ -6,7 +6,7 @@ namespace Octagon
         public delegate T OperatorDelegate(params T[] operators);
 
         public byte Priority { get; set; }
-
+        
         public OperatorDelegate OperatorFunction { get; set; }
     }
 }

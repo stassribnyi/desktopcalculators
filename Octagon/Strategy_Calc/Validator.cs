@@ -12,7 +12,7 @@ namespace Strategy_Calc
 
         private bool Validate(string expression)
         {
-            var reg = new Regex(@"([\^\*\+/\-/(/)])");
+            var reg = new Regex(@"([\^\*\+/\-/(/)])");//написать нормальную регулярку
             return reg.IsMatch(expression);
         }
     }

@@ -2,7 +2,7 @@
 
 namespace Octagon.DataModels
 {
-    public interface IServices<T>
+    public interface IRepository<T> where T : IParseble
     {
         void Create(T item);
 
@@ -10,10 +10,10 @@ namespace Octagon.DataModels
 
         void Delete(T item);
 
-        List<T> Select();
+        IList<T> Select();
     }
 
-    public interface IServices
+    public interface IRepository
     {
         void Create(object item);
 

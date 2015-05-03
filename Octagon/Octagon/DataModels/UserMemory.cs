@@ -1,12 +1,13 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace Octagon.DataModels 
 {
-    public class UserMemory : IParseble
+    public class UserMemoryModel : IParseble
     {
         public int UserId { get; set; }
 
-        public decimal Memory { get; set; }
+        public decimal? Memory { get; set; }
         
         public void Parse(DataRow row)
         {

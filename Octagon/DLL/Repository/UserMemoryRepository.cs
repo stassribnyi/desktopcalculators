@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 
 namespace DLL.Repository
 {
-    public class UserMemoryRepository : BaseRepository, IServices<UserMemory>
+    public class UserMemoryRepository : BaseRepository, IRepository<UserMemoryModel>
     {
-        public void Create(UserMemory item)
+        public void Create(UserMemoryModel item)
         {
             using (var connection = GetConnection())
             {
@@ -43,7 +43,7 @@ namespace DLL.Repository
             }
         }
 
-        public void Update(UserMemory item)
+        public void Update(UserMemoryModel item)
         {
             using (var connection = GetConnection())
             {
@@ -82,7 +82,7 @@ namespace DLL.Repository
             }
         }
 
-        public void Delete(UserMemory item)
+        public void Delete(UserMemoryModel item)
         {
             using (var connection = GetConnection())
             {
@@ -117,7 +117,7 @@ namespace DLL.Repository
             }
         }
 
-        public List<UserMemory> Select()
+        public IList<UserMemoryModel> Select()
         {
             return Select<UserMemory>();
         }

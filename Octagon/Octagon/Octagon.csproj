@@ -46,7 +46,7 @@
     <Compile Include="CalculatorCore\ITrigonometric.cs" />
     <Compile Include="CalcMemory.cs" />
     <Compile Include="DataModels\IParseble.cs" />
-    <Compile Include="DataModels\IServices.cs" />
+    <Compile Include="DataModels\IRepository.cs" />
     <Compile Include="DataModels\UserHistory.cs" />
     <Compile Include="DataModels\UserMemory.cs" />
     <Compile Include="Operator.cs" />
