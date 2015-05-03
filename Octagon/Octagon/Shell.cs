@@ -1,11 +1,10 @@
-﻿using Octagon;
-using Octagon.CalculatorCore;
+﻿using Octagon.CalculatorCore;
 using Octagon.Solvers;
 using System.Text;
 
-namespace Command_Calc
+namespace Octagon
 {
-    internal static class Shell
+    public static class Shell
     {
         private static readonly ICalculator<double> _calc = new BaseCalculator();
 
@@ -24,4 +23,5 @@ namespace Command_Calc
             return str.ToString();
         }
     }
+
 }

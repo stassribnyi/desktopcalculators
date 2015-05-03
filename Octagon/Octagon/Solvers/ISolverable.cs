@@ -1,5 +1,4 @@
 ﻿using Octagon.CalculatorCore;
-using Octagon.Parser;
 
 namespace Octagon.Solvers
 {

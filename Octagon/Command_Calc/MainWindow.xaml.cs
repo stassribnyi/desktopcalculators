@@ -9,6 +9,7 @@ namespace Command_Calc
         private readonly CalcMemory _calcMemory = new CalcMemory();
         private readonly HistoryInvoker _instance = new HistoryInvoker();
         private int _lvl = -1;
+        private int _position = -1;
 
         public MainWindow()
         {
@@ -23,6 +24,7 @@ namespace Command_Calc
             _instance.Write(exp);
             ExpressionBox.Text = Shell.GetResult(exp).ToString();
             _lvl++;
+            _position = _lvl;
         }
 
         private void MR(object sender, RoutedEventArgs e)
@@ -60,15 +62,21 @@ namespace Command_Calc
         }
         public void Redo(object sender, RoutedEventArgs e)
         {
-            _instance.Redo(_lvl+1);
-            ExpressionBox.Text = _instance.ReadLast();
-            _lvl++;
+            if (_position < _lvl)
+            {
+                _position++;
+                _instance.Redo(_position);
+                ExpressionBox.Text = _instance.ReadLast();
+            }
         }
         public void Undo(object sender, RoutedEventArgs e)
         {
-            _instance.Undo(_lvl);
-            ExpressionBox.Text = _instance.ReadLast();
-            _lvl--;
+            if (_position >= 0)
+            {
+                _instance.Undo(_position);
+                ExpressionBox.Text = _instance.ReadLast();
+                _position--;
+            }
         }
     }
 }

@@ -1,22 +1,20 @@
-﻿using System.Diagnostics.Eventing.Reader;
+﻿using System.Linq;
 using Octagon.CalculatorCore;
-using Octagon.Parser;
-using Octagon.Parser.PolishReverseNotation;
+using Octagon.Converter.PolishReverseNotation;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Octagon.Solvers
 {
     public class Solver : ISolverable<double>
     {
-        private IParseble _parser;
+        private Converter.IConvertible _parser;
 
         public Solver()
         {
         }
 
-        public Solver(IParseble parser)
+        public Solver(Converter.IConvertible parser)
         {
             _parser = parser;
         }
@@ -30,7 +28,6 @@ namespace Octagon.Solvers
         {
             if (expression.Length != 0)
             {
-
                 InitParser(calculator);
 
                 var stack = new Stack<string>();
@@ -66,8 +63,7 @@ namespace Octagon.Solvers
                             break;
                     }
                 }
-
-
+                
                 return Convert.ToDouble(stack.Pop());
             }
             else return 0;

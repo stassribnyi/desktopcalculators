@@ -52,12 +52,12 @@ namespace Command_Calc
 
         public void Redo(int level)
         {
-            if (level <= _commands.Count-1) _commands[level].Redo();//допилить
+            if (level >= 0 && level < _commands.Count) _commands[level].Redo();
         }
 
         public void Undo(int level)
         {
-            if (level <= _commands.Count) _commands[level].Undo();//допилить
+            if (level >= 0 && level < _commands.Count) _commands[level].Undo();
         }
 
         public void Write(string expression)

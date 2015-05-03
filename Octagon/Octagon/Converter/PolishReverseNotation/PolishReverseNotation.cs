@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Octagon.Parser.PolishReverseNotation
+namespace Octagon.Converter.PolishReverseNotation
 {
-    public class PolishReverseNotation : IParseble
+    public class PolishReverseNotation : IConvertible
     {
         private readonly IDictionary<string, Operator<double>> _operatorFunc = new Dictionary<string, Operator<double>>();
 
