@@ -58,6 +58,7 @@ using System.Linq;
     public <#=code.Escape(container)#>()
         : base("name=<#=container.Name#>")
     {
+	EF_FIX.FixEfProviderServicesProblem();
 <#
 if (!loader.IsLazyLoadingEnabled(container))
 {

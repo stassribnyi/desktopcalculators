@@ -28,7 +28,7 @@
             <PropertyRef Name="User_ID" />
           </Key>
           <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Memory" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Memory" Type="float" />
         </EntityType>
         <Association Name="FK_UserHistory_UserMemory">
           <End Role="UserMemory" Type="Self.UserMemory" Multiplicity="0..1" />
@@ -86,14 +86,14 @@
           <Parameter Name="Expression" Type="nchar" Mode="In" />
         </Function>
         <Function Name="UserMemoryCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Memory" Type="decimal" Mode="In" />
+          <Parameter Name="Memory" Type="float" Mode="In" />
         </Function>
         <Function Name="UserMemoryDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="User_ID" Type="int" Mode="In" />
         </Function>
         <Function Name="UserMemoryUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="User_ID" Type="int" Mode="In" />
-          <Parameter Name="Memory" Type="decimal" Mode="In" />
+          <Parameter Name="Memory" Type="float" Mode="In" />
         </Function>
         <EntityContainer Name="Хранилище UserDataModelContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -133,7 +133,7 @@
             <PropertyRef Name="User_ID" />
           </Key>
           <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Memory" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Memory" Type="Double" />
           <NavigationProperty Name="UserHistories" Relationship="Self.FK_UserHistory_UserMemory" FromRole="UserMemory" ToRole="UserHistory" />
         </EntityType>
         <Association Name="FK_UserHistory_UserMemory">
@@ -199,14 +199,14 @@
             <Parameter Name="Expression" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="UserMemoryCreate">
-            <Parameter Name="Memory" Mode="In" Type="Decimal" />
+            <Parameter Name="Memory" Mode="In" Type="Double" />
           </FunctionImport>
           <FunctionImport Name="UserMemoryDelete">
             <Parameter Name="User_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="UserMemoryUpdate">
             <Parameter Name="User_ID" Mode="In" Type="Int32" />
-            <Parameter Name="Memory" Mode="In" Type="Decimal" />
+            <Parameter Name="Memory" Mode="In" Type="Double" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">

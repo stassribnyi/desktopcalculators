@@ -1,0 +1,16 @@
+﻿<Application x:Class="Octagon.Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
+                <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/modernui.dark.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Color x:Key="AccentColor">#17577E</Color>
+            <ThemeDictionary x:Key="ThemeSo" />
+            <ThemeDictionary x:Key="ThemeDictionary" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

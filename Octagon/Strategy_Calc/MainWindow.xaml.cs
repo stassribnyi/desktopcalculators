@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows;
 using Octagon;
-using OOP_Calc;
 using Strategy_Calc.Strategy;
+using Strategy_Calc.Validator;
 
 namespace Strategy_Calc
 {
@@ -12,7 +12,7 @@ namespace Strategy_Calc
     public partial class MainWindow : Window
     {
         private CalcMemory _calcMemory = new CalcMemory();
-        private IStrategy _strategy = new Validator();
+        private IStrategy _strategy = new BaseValidator();
 
         public MainWindow()
         {

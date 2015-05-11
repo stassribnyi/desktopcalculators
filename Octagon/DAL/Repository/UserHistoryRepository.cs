@@ -7,7 +7,7 @@ namespace DAL.Repository
 {
     public class UserHistoryRepository : IRepository<UserHistoryModel>
     {
-        readonly UserDataEntities _contextEntities = new UserDataEntities();
+        private readonly UserDataEntities _contextEntities = new UserDataEntities();
 
         public void Create(UserHistoryModel item)
         {
@@ -45,9 +45,9 @@ namespace DAL.Repository
             _contextEntities.SaveChanges();
         }
 
-        public IList<UserHistoryModel> Select()
+        public IList<UserHistoryModel> Select(int userId)
         {
-            return _contextEntities.UserHistories.Select(i => new UserHistoryModel
+            return _contextEntities.UserHistories.Where(item => item.User_ID == userId).Select(i => new UserHistoryModel
             {
                 HistoryId = i.History_ID,
                 UserId = i.User_ID,

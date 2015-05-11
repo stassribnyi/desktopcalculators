@@ -20,6 +20,7 @@ namespace DAL.EntityModel
         public UserDataEntities()
             : base("name=UserDataEntities")
         {
+    	EF_FIX.FixEfProviderServicesProblem();
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -173,11 +174,11 @@ namespace DAL.EntityModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UserHistoryUpdate", history_IDParameter, user_IDParameter, expressionParameter);
         }
     
-        public virtual int UserMemoryCreate(Nullable<decimal> memory)
+        public virtual int UserMemoryCreate(Nullable<double> memory)
         {
             var memoryParameter = memory.HasValue ?
                 new ObjectParameter("Memory", memory) :
-                new ObjectParameter("Memory", typeof(decimal));
+                new ObjectParameter("Memory", typeof(double));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UserMemoryCreate", memoryParameter);
         }
@@ -191,7 +192,7 @@ namespace DAL.EntityModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UserMemoryDelete", user_IDParameter);
         }
     
-        public virtual int UserMemoryUpdate(Nullable<int> user_ID, Nullable<decimal> memory)
+        public virtual int UserMemoryUpdate(Nullable<int> user_ID, Nullable<double> memory)
         {
             var user_IDParameter = user_ID.HasValue ?
                 new ObjectParameter("User_ID", user_ID) :
@@ -199,7 +200,7 @@ namespace DAL.EntityModel
     
             var memoryParameter = memory.HasValue ?
                 new ObjectParameter("Memory", memory) :
-                new ObjectParameter("Memory", typeof(decimal));
+                new ObjectParameter("Memory", typeof(double));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UserMemoryUpdate", user_IDParameter, memoryParameter);
         }

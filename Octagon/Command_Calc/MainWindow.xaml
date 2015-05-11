@@ -1,20 +1,78 @@
 ﻿<Window x:Class="Command_Calc.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-       Title="MainWindow" Height="180" Width="220">
+        xmlns:local="clr-namespace:Command_Calc.ViewModel"
+        Title="MainWindow"
+        Width="300"
+        Height="300">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
-        <Button Content="Решить" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="75" Click="Deside"/>
-        <TextBox  Name="ExpressionBox" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
-        <Label Name="SymbLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Name="MemLabel" Content="" HorizontalAlignment="Left" Margin="145,10,0,0" VerticalAlignment="Top" Width="60"/>
-        <Button Content="MS" HorizontalAlignment="Left" Margin="90,69,0,0" VerticalAlignment="Top" Width="22" Click="MS"/>
-        <Button Content="MR" HorizontalAlignment="Left" Margin="63,69,0,0" VerticalAlignment="Top" Width="22" Click="MR"/>
-        <Button Content="MC" HorizontalAlignment="Left" Margin="37,69,0,0" VerticalAlignment="Top" Width="22" Click="MC"/>
-        <Button Content="M+" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="22" Click="MP"/>
-        <Button Content="M-" HorizontalAlignment="Left" Margin="117,69,0,0" VerticalAlignment="Top" Width="22" Click="MM"/>
-        <Button Content="SH" HorizontalAlignment="Left" Margin="180,119,0,0" VerticalAlignment="Top" Width="22" Click="Mat" RenderTransformOrigin="2.818,1.25"/>
-        <Button Content="UN" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Width="22" Click="Undo" RenderTransformOrigin="2.818,1.25"/>
-        <Button Content="RD" HorizontalAlignment="Left" Margin="37,119,0,0" VerticalAlignment="Top" Width="22" Click="Redo" RenderTransformOrigin="2.818,1.25"/>
+        <Button Width="75"
+                Margin="188,222,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding DesideCommand}"
+                Content="Решить" />
+        <TextBox Name="ExpressionBox"
+                 Width="253"
+                 Height="26"
+                 Margin="10,41,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Text="{Binding Expression}"
+                 TextWrapping="Wrap" />
+        <Label Name="SymbLabel"
+               Width="120"
+               Margin="10,10,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="{Binding Symbols}" />
+        <Label Name="MemLabel"
+               Width="60"
+               Margin="222,10,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="{Binding Memory}" />
+        <Button Margin="92,72,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding MS}"
+                Content="MS" />
+        <Button Margin="65,72,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding MR}"
+                Content="MR" />
+        <Button Margin="38,72,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding MC}"
+                Content="MC" />
+        <Button Margin="10,72,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding MP}"
+                Content="M+" />
+        <Button Margin="118,72,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding MM}"
+                Content="M-" />
+
+        <Button Margin="10,119,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding UndoCommand}"
+                Content="UN"
+                RenderTransformOrigin="2.818,1.25" />
+        <Button Margin="49,119,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding RedoCommand}"
+                Content="RD"
+                RenderTransformOrigin="2.818,1.25" />
 
     </Grid>
 </Window>

@@ -1,9 +1,0 @@
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\bin\Debug\Strategy.exe.config
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\obj\Debug\Strategy_Calc.csprojResolveAssemblyReference.cache
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\obj\Debug\MainWindow.baml
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\obj\Debug\MainWindow.g.cs
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\obj\Debug\App.g.cs
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\obj\Debug\Strategy_MarkupCompile.cache
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\obj\Debug\Strategy.g.resources
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\obj\Debug\Strategy.Properties.Resources.resources
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Strategy\obj\Debug\Strategy_Calc.csproj.GenerateResource.Cache

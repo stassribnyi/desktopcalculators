@@ -1,4 +1,5 @@
-﻿using DLL.Parsers;
+﻿using System.Runtime.Remoting.Messaging;
+using DLL.Parsers;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -25,7 +26,7 @@ namespace DLL.Repository
             }
         }
 
-        protected List<T> Select<T>() where T : IParseble, new()
+        protected List<T> Select<T>() where T : BaseDataModel, IParseble, new()
         {
             var list = new List<T>();
 
@@ -38,9 +39,9 @@ namespace DLL.Repository
 
                     var querry = new StringBuilder();
 
-                    var type = typeof(T).Name;
+                    var dataModel = new T();
 
-                    querry.AppendFormat("Select * From [{0}]", type);
+                    querry.AppendFormat("Select * From [{0}]", dataModel.GetTableName());
 
                     var command = new SqlCommand(querry.ToString(), connection);
 
@@ -62,7 +63,7 @@ namespace DLL.Repository
                 catch (SqlException exeption)
                 {
                     // Протоколировать исключение 
-                    //exeption.Message;
+                    Console.WriteLine(exeption.Message);
                 }
                 finally
                 {

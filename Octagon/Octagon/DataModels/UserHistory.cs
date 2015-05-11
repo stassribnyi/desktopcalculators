@@ -2,8 +2,15 @@
 
 namespace Octagon.DataModels
 {
-    public class UserHistoryModel : IParseble
+    public class UserHistoryModel : BaseDataModel, IParseble
     {
+        private const string TableName = "UserHistory";
+
+        public override string GetTableName()
+        {
+            return TableName;
+        }
+
         public int HistoryId { get; set; }
 
         public int? UserId { get; set; }
@@ -14,7 +21,7 @@ namespace Octagon.DataModels
         {
             HistoryId = (int)row["History_ID"];
             UserId = (int)row["User_ID"];
-            Expression = (string)row["Memory"];
+            Expression = (string)row["Expression"];
         }
     }
 }

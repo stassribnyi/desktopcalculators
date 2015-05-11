@@ -1,4 +1,5 @@
-﻿using Octagon.DataModels;
+﻿using System.Linq;
+using Octagon.DataModels;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -22,7 +23,7 @@ namespace DLL.Repository
                     };
 
                     // Входные параметр. 
-        
+
                     command.Parameters.Add("@User_ID", SqlDbType.Int);
                     command.Parameters["@User_ID"].Value = item.UserId;
 
@@ -77,7 +78,7 @@ namespace DLL.Repository
                 catch (SqlException exeption)
                 {
                     // Протоколировать исключение 
-                   //exeption.Message;
+                    //exeption.Message;
                 }
                 finally
                 {
@@ -112,7 +113,7 @@ namespace DLL.Repository
                 catch (SqlException exeption)
                 {
                     // Протоколировать исключение 
-                   //exeption.Message;
+                    //exeption.Message;
                 }
                 finally
                 {
@@ -122,9 +123,9 @@ namespace DLL.Repository
             }
         }
 
-        public IList<UserHistoryModel> Select()
+        public IList<UserHistoryModel> Select(int userId)
         {
-            return Select<UserHistoryModel>();
+            return Select<UserHistoryModel>().Where(i => i.UserId == userId).ToList();
         }
     }
 }

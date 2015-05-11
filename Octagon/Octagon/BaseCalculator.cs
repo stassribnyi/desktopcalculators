@@ -39,7 +39,7 @@ namespace Octagon
 
         public double Subtraction(params double[] values)
         {
-            return values.Aggregate<double, double>(0, (current, item) => current - item);
+            return values.Aggregate<double, double>(0, (current, item) => item - current);
         }
 
         public double Multiplication(params double[] values)

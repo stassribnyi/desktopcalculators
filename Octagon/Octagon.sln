@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon", "Octagon\Octagon.csproj", "{C0E2327B-EBDD-4352-9F11-836D1BC78BF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.BLL", "Octagon\Octagon.BLL.csproj", "{C0E2327B-EBDD-4352-9F11-836D1BC78BF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Calc", "OOP_Calc\OOP_Calc.csproj", "{A17E57D9-86FC-4B60-8A36-00C29125ADE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.Calc_OOP", "OOP_Calc\Octagon.Calc_OOP.csproj", "{A17E57D9-86FC-4B60-8A36-00C29125ADE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command_Calc", "Command_Calc\Command_Calc.csproj", "{AC77DAD3-7A88-4F15-8EB7-0BC8E532F49B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.Calc_Command", "Command_Calc\Octagon.Calc_Command.csproj", "{AC77DAD3-7A88-4F15-8EB7-0BC8E532F49B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy_Calc", "Strategy_Calc\Strategy_Calc.csproj", "{6503DA39-2C5A-41EE-B36A-F759CED8729F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.Calc_Strategy", "Strategy_Calc\Octagon.Calc_Strategy.csproj", "{6503DA39-2C5A-41EE-B36A-F759CED8729F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL", "DLL\DLL.csproj", "{0F8F51F0-63ED-43B6-867A-28B6EECD101A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.DLL", "DLL\Octagon.DLL.csproj", "{0F8F51F0-63ED-43B6-867A-28B6EECD101A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{ABC32650-2EE8-4991-9DE1-2F6A7852D56F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.DAL", "DAL\Octagon.DAL.csproj", "{ABC32650-2EE8-4991-9DE1-2F6A7852D56F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.Client", "Octagon.Client\Octagon.Client.csproj", "{855F6486-391B-4FA1-A39C-7AB1A8EB868A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{ABC32650-2EE8-4991-9DE1-2F6A7852D56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABC32650-2EE8-4991-9DE1-2F6A7852D56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABC32650-2EE8-4991-9DE1-2F6A7852D56F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{855F6486-391B-4FA1-A39C-7AB1A8EB868A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{855F6486-391B-4FA1-A39C-7AB1A8EB868A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{855F6486-391B-4FA1-A39C-7AB1A8EB868A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{855F6486-391B-4FA1-A39C-7AB1A8EB868A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

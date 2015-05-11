@@ -20,7 +20,7 @@ namespace DAL.EntityModel
         }
     
         public int User_ID { get; set; }
-        public Nullable<decimal> Memory { get; set; }
+        public Nullable<double> Memory { get; set; }
     
         public virtual ICollection<UserHistory> UserHistories { get; set; }
     }

@@ -1,4 +1,5 @@
-﻿using Octagon.DataModels;
+﻿using System.Linq;
+using Octagon.DataModels;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -23,7 +24,7 @@ namespace DLL.Repository
 
                     // Входные параметр. 
                     
-                    command.Parameters.Add("@Memory", SqlDbType.Decimal);
+                    command.Parameters.Add("@Memory", SqlDbType.Float);
                     command.Parameters["@Memory"].Value = item.Memory;
 
                     // Выполнение хранимой процедуры. 
@@ -62,7 +63,7 @@ namespace DLL.Repository
                     command.Parameters.Add("@User_ID", SqlDbType.Int);
                     command.Parameters["@User_ID"].Value = item.UserId;
                     
-                    command.Parameters.Add("@Memory", SqlDbType.Decimal);
+                    command.Parameters.Add("@Memory", SqlDbType.Float);
                     command.Parameters["@Memory"].Value = item.Memory;
 
                     // Выполнение хранимой процедуры. 
@@ -117,9 +118,9 @@ namespace DLL.Repository
             }
         }
 
-        public IList<UserMemoryModel> Select()
+        public IList<UserMemoryModel> Select(int userId)
         {
-            return Select<UserMemory>();
+            return Select<UserMemoryModel>().Where(i => i.UserId == userId).ToList();
         }
     }
 }

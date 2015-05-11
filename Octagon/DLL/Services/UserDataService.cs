@@ -5,7 +5,7 @@ using System.Data;
 
 namespace DLL.Services
 {
-    public class UserDataService : BaseRepository
+    public class UserDataService : BaseRepository, IServises<UserMemoryModel, UserHistoryModel>
     {
         public void Create(UserMemoryModel userMemory, UserHistoryModel userHistory)
         {
