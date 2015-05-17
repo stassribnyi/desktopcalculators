@@ -51,6 +51,7 @@
     <Compile Include="DataModels\IRepository.cs" />
     <Compile Include="DataModels\UserHistory.cs" />
     <Compile Include="DataModels\UserMemory.cs" />
+    <Compile Include="DataModels\UserName.cs" />
     <Compile Include="Operator.cs" />
     <Compile Include="Converter\IConvertible.cs" />
     <Compile Include="Converter\PolishReverseNotation\PolishReverseNotation.cs" />

@@ -23,5 +23,6 @@ namespace DAL.EntityModel
         public Nullable<double> Memory { get; set; }
     
         public virtual ICollection<UserHistory> UserHistories { get; set; }
+        public virtual UserName UserName { get; set; }
     }
 }

@@ -9,7 +9,9 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <WrapPanel MinWidth="200">
-                <TextBlock Text="This is final version of Octagon. This client includes all developments other versions!" TextWrapping="Wrap" />
+                <TextBox Width="268"
+                         Text="This is final version of Octagon. This client includes all developments other versions!"
+                         TextWrapping="Wrap" />
             </WrapPanel>
         </ScrollViewer>
     </Grid>

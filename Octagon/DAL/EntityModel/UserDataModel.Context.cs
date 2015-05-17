@@ -31,6 +31,7 @@ namespace DAL.EntityModel
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UserHistory> UserHistories { get; set; }
         public virtual DbSet<UserMemory> UserMemories { get; set; }
+        public virtual DbSet<UserName> UserNames { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -203,6 +204,45 @@ namespace DAL.EntityModel
                 new ObjectParameter("Memory", typeof(double));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UserMemoryUpdate", user_IDParameter, memoryParameter);
+        }
+    
+        public virtual int UserNameCreate(Nullable<int> user_ID, string name)
+        {
+            var user_IDParameter = user_ID.HasValue ?
+                new ObjectParameter("User_ID", user_ID) :
+                new ObjectParameter("User_ID", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UserNameCreate", user_IDParameter, nameParameter);
+        }
+    
+        public virtual int UserNameDelete(Nullable<int> user_ID, string name)
+        {
+            var user_IDParameter = user_ID.HasValue ?
+                new ObjectParameter("User_ID", user_ID) :
+                new ObjectParameter("User_ID", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UserNameDelete", user_IDParameter, nameParameter);
+        }
+    
+        public virtual int UserNameUpdate(Nullable<int> user_ID, string name)
+        {
+            var user_IDParameter = user_ID.HasValue ?
+                new ObjectParameter("User_ID", user_ID) :
+                new ObjectParameter("User_ID", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UserNameUpdate", user_IDParameter, nameParameter);
         }
     }
 }

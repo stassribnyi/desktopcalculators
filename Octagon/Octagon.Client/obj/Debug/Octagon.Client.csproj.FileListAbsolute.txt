@@ -54,3 +54,9 @@ C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Oc
 C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\obj\Debug\Octagon.Client.pdb
 C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\obj\Debug\Pages\SelectUser.g.cs
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\obj\Debug\Pages\SelectUser.baml
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\bin\Debug\Autofac.dll
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\bin\Debug\Autofac.xml
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\obj\Debug\Pages\BaseLayout.baml
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\obj\Debug\Pages\BaseLayout.g.cs

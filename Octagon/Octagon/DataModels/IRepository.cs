@@ -11,6 +11,8 @@ namespace Octagon.DataModels
         void Delete(T item);
 
         IList<T> Select(int id);
+
+        IList<T> Select();
     }
 
     public interface IRepository
@@ -21,6 +23,8 @@ namespace Octagon.DataModels
 
         void Delete(object item);
 
-        List<object> Select();
+        List<object> Select(int id);
+
+        IList<object> Select();
     }
 }

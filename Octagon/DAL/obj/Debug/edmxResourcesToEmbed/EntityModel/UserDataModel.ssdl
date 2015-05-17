@@ -25,6 +25,13 @@
     <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Memory" Type="float" />
   </EntityType>
+  <EntityType Name="UserName">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="50" />
+  </EntityType>
   <Association Name="FK_UserHistory_UserMemory">
     <End Role="UserMemory" Type="Self.UserMemory" Multiplicity="0..1" />
     <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
@@ -33,6 +40,18 @@
         <PropertyRef Name="User_ID" />
       </Principal>
       <Dependent Role="UserHistory">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserName_UserMemory">
+    <End Role="UserMemory" Type="Self.UserMemory" Multiplicity="1" />
+    <End Role="UserName" Type="Self.UserName" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserMemory">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="UserName">
         <PropertyRef Name="User_ID" />
       </Dependent>
     </ReferentialConstraint>
@@ -90,13 +109,30 @@
     <Parameter Name="User_ID" Type="int" Mode="In" />
     <Parameter Name="Memory" Type="float" Mode="In" />
   </Function>
+  <Function Name="UserNameCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_ID" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="UserNameDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_ID" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="UserNameUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_ID" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nchar" Mode="In" />
+  </Function>
   <EntityContainer Name="Хранилище UserDataModelContainer">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserHistory" EntityType="Self.UserHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserMemory" EntityType="Self.UserMemory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserName" EntityType="Self.UserName" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_UserHistory_UserMemory" Association="Self.FK_UserHistory_UserMemory">
       <End Role="UserMemory" EntitySet="UserMemory" />
       <End Role="UserHistory" EntitySet="UserHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserName_UserMemory" Association="Self.FK_UserName_UserMemory">
+      <End Role="UserMemory" EntitySet="UserMemory" />
+      <End Role="UserName" EntitySet="UserName" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

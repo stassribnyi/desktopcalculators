@@ -79,9 +79,13 @@
     <Compile Include="EntityModel\UserMemory.cs">
       <DependentUpon>UserDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityModel\UserName.cs">
+      <DependentUpon>UserDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\UserHistoryRepository.cs" />
     <Compile Include="Repository\UserMemoryRepository.cs" />
+    <Compile Include="Repository\UserNameRepository.cs" />
     <Compile Include="Services\UserDataService.cs" />
   </ItemGroup>
   <ItemGroup>

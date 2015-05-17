@@ -38,5 +38,14 @@ namespace DAL.Repository
                 Memory = i.Memory
             }).ToList();
         }
+        
+        public IList<UserMemoryModel> Select()
+        {
+            return _contextEntities.UserMemories.Select(i => new UserMemoryModel
+            {
+                UserId = i.User_ID,
+                Memory = i.Memory
+            }).ToList();
+        }
     }
 }

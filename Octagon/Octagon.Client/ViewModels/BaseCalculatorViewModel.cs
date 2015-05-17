@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Input;
 using Command_Calc.Model;
 using DAL.Repository;
@@ -8,7 +9,7 @@ using Octagon.DataModels;
 using Strategy_Calc;
 using Strategy_Calc.Validator;
 
-namespace Octagon.Client.ViewModel
+namespace Octagon.Client.ViewModels
 {
     public class BaseCalculatorViewModel : ViewModelBase
     {
@@ -16,7 +17,7 @@ namespace Octagon.Client.ViewModel
         private string _memory;
         private int _lvl = -1;
         private int _position = -1;
-        private const int UserId = 1;
+        private int _userId = 1;
 
         private ICommand _desideCommand;
         private ICommand _clearCommand;
@@ -57,27 +58,39 @@ namespace Octagon.Client.ViewModel
             _calcMemory = new CalcMemory();
             _instance = new HistoryInvoker();
             _controlExpression = new ControlExpression(new BaseValidator());//does not work right, because it need normal regexp
+            
+           
+
             InitCalculator();
-            InitMemory(new UserMemoryRepository());
-            InitHistory(new UserHistoryRepository());
+
+        }
+
+        public BaseCalculatorViewModel(SelectUserViewModel selectUserViewModel)
+        {
+            selectUserViewModel.RaiseSelectUserEvent += OnSelectUser;
+            _calcMemory = new CalcMemory();
+            _instance = new HistoryInvoker();
+            _controlExpression = new ControlExpression(new BaseValidator());//does not work right, because it need normal regexp
+            
+            InitCalculator();
         }
 
         private void InitCalculator()
         {
-            Expression = "0";
-            Memory = "0";
+            InitMemory(new UserMemoryRepository());
+            InitHistory(new UserHistoryRepository());
         }
 
         private void InitMemory(IRepository<UserMemoryModel> context)
         {
-            var userMemoryList = context.Select(UserId);
-            _calcMemory.Memory = Convert.ToDouble(userMemoryList[0].Memory);
+            var userMemoryList = context.Select(_userId);
+            _calcMemory.Memory = Convert.ToDouble(userMemoryList.Last().Memory);
             Memory = _calcMemory.Memory.ToString();
         }
 
         private void InitHistory(IRepository<UserHistoryModel> context)
         {
-            var userHistoryList = context.Select(UserId);
+            var userHistoryList = context.Select(_userId);
             foreach (var userHistoryModel in userHistoryList)
             {
                 _instance.Write(userHistoryModel.Expression.Trim());
@@ -86,6 +99,12 @@ namespace Octagon.Client.ViewModel
 
             Expression = _instance.ReadLast();
             _position = _lvl;
+        }
+
+        public void OnSelectUser(object sender, SelectUserEventArgs eventArgs)
+        {
+            _userId = eventArgs.Id;
+            InitCalculator();
         }
 
         public void AppendValue(string value)

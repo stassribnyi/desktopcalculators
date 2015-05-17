@@ -54,5 +54,16 @@ namespace DAL.Repository
                 Expression = i.Expression
             }).ToList();
         }
+
+
+        public IList<UserHistoryModel> Select()
+        {
+            return _contextEntities.UserHistories.Select(i => new UserHistoryModel
+            {
+                HistoryId = i.History_ID,
+                UserId = i.User_ID,
+                Expression = i.Expression
+            }).ToList();
+        }
     }
 }

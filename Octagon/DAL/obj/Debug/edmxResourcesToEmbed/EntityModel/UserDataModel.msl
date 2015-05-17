@@ -29,6 +29,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserNames">
+      <EntityTypeMapping TypeName="UserDataModel.UserName">
+        <MappingFragment StoreEntitySet="UserName">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище UserDataModel.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище UserDataModel.sp_creatediagram" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище UserDataModel.sp_dropdiagram" />
@@ -59,5 +67,8 @@
     <FunctionImportMapping FunctionImportName="UserMemoryCreate" FunctionName="Хранилище UserDataModel.UserMemoryCreate" />
     <FunctionImportMapping FunctionImportName="UserMemoryDelete" FunctionName="Хранилище UserDataModel.UserMemoryDelete" />
     <FunctionImportMapping FunctionImportName="UserMemoryUpdate" FunctionName="Хранилище UserDataModel.UserMemoryUpdate" />
+    <FunctionImportMapping FunctionImportName="UserNameCreate" FunctionName="Хранилище UserDataModel.UserNameCreate" />
+    <FunctionImportMapping FunctionImportName="UserNameDelete" FunctionName="Хранилище UserDataModel.UserNameDelete" />
+    <FunctionImportMapping FunctionImportName="UserNameUpdate" FunctionName="Хранилище UserDataModel.UserNameUpdate" />
   </EntityContainerMapping>
 </Mapping>

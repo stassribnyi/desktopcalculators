@@ -1,16 +1,16 @@
-﻿<UserControl x:Class="Octagon.Client.Pages.BaseCalculator"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:octagon="clr-namespace:Octagon.Client.ViewModel"
-             x:Name="BaseCalculatorPage"
-             d:DesignHeight="300"
-             d:DesignWidth="300"
-             mc:Ignorable="d">
-    <UserControl.DataContext>
+﻿<Page x:Class="Octagon.Client.Pages.BaseCalculator"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:octagon="clr-namespace:Octagon.Client.ViewModels"
+      x:Name="BaseCalculatorPage"
+      d:DesignHeight="300"
+      d:DesignWidth="300"
+      mc:Ignorable="d">
+    <Page.DataContext>
         <octagon:BaseCalculatorViewModel />
-    </UserControl.DataContext>
+    </Page.DataContext>
     <Grid HorizontalAlignment="Center">
         <TextBox x:Name="ExpressionBox"
                  Width="282"
@@ -194,12 +194,19 @@
                 VerticalAlignment="Top"
                 Click="EnterZero"
                 Content="0" />
-        <Button Width="186"
+        <Button x:Name="Comma"
+                Width="90"
                 Margin="106,264,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="EnterComma"
+                Content="," />
+        <Button Width="90"
+                Margin="202,264,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Command="{Binding DesideCommand}"
                 Content="=" />
 
     </Grid>
-</UserControl>
+</Page>

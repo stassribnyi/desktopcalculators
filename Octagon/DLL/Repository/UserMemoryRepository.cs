@@ -122,5 +122,10 @@ namespace DLL.Repository
         {
             return Select<UserMemoryModel>().Where(i => i.UserId == userId).ToList();
         }
+        
+        public IList<UserMemoryModel> Select()
+        {
+            return Select<UserMemoryModel>().ToList();
+        }
     }
 }

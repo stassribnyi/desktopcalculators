@@ -26,6 +26,15 @@
     <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Memory" Type="Double" />
     <NavigationProperty Name="UserHistories" Relationship="Self.FK_UserHistory_UserMemory" FromRole="UserMemory" ToRole="UserHistory" />
+    <NavigationProperty Name="UserName" Relationship="Self.FK_UserName_UserMemory" FromRole="UserMemory" ToRole="UserName" />
+  </EntityType>
+  <EntityType Name="UserName">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="UserMemory" Relationship="Self.FK_UserName_UserMemory" FromRole="UserName" ToRole="UserMemory" />
   </EntityType>
   <Association Name="FK_UserHistory_UserMemory">
     <End Role="UserMemory" Type="Self.UserMemory" Multiplicity="0..1" />
@@ -39,13 +48,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserName_UserMemory">
+    <End Role="UserMemory" Type="Self.UserMemory" Multiplicity="1" />
+    <End Role="UserName" Type="Self.UserName" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserMemory">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="UserName">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="UserDataEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="UserHistories" EntityType="Self.UserHistory" />
     <EntitySet Name="UserMemories" EntityType="Self.UserMemory" />
+    <EntitySet Name="UserNames" EntityType="Self.UserName" />
     <AssociationSet Name="FK_UserHistory_UserMemory" Association="Self.FK_UserHistory_UserMemory">
       <End Role="UserMemory" EntitySet="UserMemories" />
       <End Role="UserHistory" EntitySet="UserHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserName_UserMemory" Association="Self.FK_UserName_UserMemory">
+      <End Role="UserMemory" EntitySet="UserMemories" />
+      <End Role="UserName" EntitySet="UserNames" />
     </AssociationSet>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -98,6 +124,18 @@
     <FunctionImport Name="UserMemoryUpdate">
       <Parameter Name="User_ID" Mode="In" Type="Int32" />
       <Parameter Name="Memory" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="UserNameCreate">
+      <Parameter Name="User_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UserNameDelete">
+      <Parameter Name="User_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UserNameUpdate">
+      <Parameter Name="User_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">

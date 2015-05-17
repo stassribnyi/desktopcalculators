@@ -1,4 +1,4 @@
-﻿using Octagon.Client.ViewModel;
+﻿using Octagon.Client.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -7,7 +7,7 @@ namespace Octagon.Client.Pages
     /// <summary>
     /// Логика взаимодействия для NumberPanel.xaml
     /// </summary>
-    public partial class BaseCalculator : UserControl
+    public partial class BaseCalculator : Page
     {
         private BaseCalculatorViewModel _baseCalculatorViewModel;
         public BaseCalculator()
@@ -22,6 +22,10 @@ namespace Octagon.Client.Pages
             _baseCalculatorViewModel.AppendValue(value);
         }
         
+        private void EnterComma(object sender, RoutedEventArgs e)
+        {
+            EnterValue(Comma.Content.ToString());
+        }
         private void EnterZero(object sender, RoutedEventArgs e)
         {
             EnterValue(Zero.Content.ToString());

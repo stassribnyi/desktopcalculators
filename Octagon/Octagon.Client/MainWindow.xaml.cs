@@ -1,4 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
+using Octagon.Client.ViewModels;
 
 namespace Octagon.Client
 {

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon.Client\App.xaml
-7-280172526
+9-1086555233
 
-15-146067654
-23546594327
-MainWindow.xaml;Pages\BaseCalculator.xaml;Pages\Help.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;
+211699133622
+24-458992080
+MainWindow.xaml;Pages\BaseCalculator.xaml;Pages\BaseLayout.xaml;Pages\SelectUser.xaml;Pages\Help.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;
 
-True
+False
 

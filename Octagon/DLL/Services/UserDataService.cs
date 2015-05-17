@@ -5,9 +5,9 @@ using System.Data;
 
 namespace DLL.Services
 {
-    public class UserDataService : BaseRepository, IServises<UserMemoryModel, UserHistoryModel>
+    public class UserDataService : BaseRepository, IServises<UserMemoryModel, UserHistoryModel, UserNameModel>
     {
-        public void Create(UserMemoryModel userMemory, UserHistoryModel userHistory)
+        public void Create(UserMemoryModel userMemory, UserHistoryModel userHistory, UserNameModel userName)
         {
             using (var connection = GetConnection())
             {
@@ -37,6 +37,21 @@ namespace DLL.Services
                     // Выполнение хранимой процедуры. 
                     command.ExecuteNonQuery();
 
+                    //создание имени пользователя
+                    command.CommandText = "dbo.UserNameCreate";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Входные параметр. 
+
+                    command.Parameters.Add("@User_ID", SqlDbType.Int);
+                    command.Parameters["@User_ID"].Value = userName.UserId;
+
+                    command.Parameters.Add("@Name", SqlDbType.NChar, 50);
+                    command.Parameters["@Name"].Value = userName.Name;
+
+                    // Выполнение хранимой процедуры. 
+                    command.ExecuteNonQuery();
+
                     //создание истории на базе созданого пользователя
                     command.CommandText = "dbo.UserHistoryCreate";
                     command.CommandType = CommandType.StoredProcedure;
@@ -61,7 +76,7 @@ namespace DLL.Services
             }
         }
 
-        public void Update(UserMemoryModel userMemory, UserHistoryModel userHistory)
+        public void Update(UserMemoryModel userMemory, UserHistoryModel userHistory, UserNameModel userName)
         {
             using (var connection = GetConnection())
             {
@@ -94,6 +109,21 @@ namespace DLL.Services
                     // Выполнение хранимой процедуры. 
                     command.ExecuteNonQuery();
 
+                    //обновление имени пользователя 
+                    command.CommandText = "dbo.UserNameUpdate";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Входные параметр. 
+
+                    command.Parameters.Add("@User_ID", SqlDbType.Int);
+                    command.Parameters["@User_ID"].Value = userName.UserId;
+
+                    command.Parameters.Add("@Name", SqlDbType.NChar, 50);
+                    command.Parameters["@Name"].Value = userName.Name;
+
+                    // Выполнение хранимой процедуры. 
+                    command.ExecuteNonQuery();
+
                     //update истории 
                     command.CommandText = "dbo.UserHistoryUpdate";
                     command.CommandType = CommandType.StoredProcedure;
@@ -121,7 +151,7 @@ namespace DLL.Services
             }
         }
 
-        public void Delete(UserMemoryModel userMemory, UserHistoryModel userHistory)
+        public void Delete(UserMemoryModel userMemory, UserHistoryModel userHistory, UserNameModel userName)
         {
             using (var connection = GetConnection())
             {
@@ -146,6 +176,18 @@ namespace DLL.Services
                     // Входные параметр. 
                     command.Parameters.Add("@History_ID", SqlDbType.Int);
                     command.Parameters["@History_ID"].Value = userHistory.HistoryId;
+
+                    // Выполнение хранимой процедуры. 
+                    command.ExecuteNonQuery();
+
+                    //удаление имени пользователя
+                    command.CommandText = "dbo.UserNameDelete";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Входные параметр. 
+
+                    command.Parameters.Add("@User_ID", SqlDbType.Int);
+                    command.Parameters["@User_ID"].Value = userName.UserId;
 
                     // Выполнение хранимой процедуры. 
                     command.ExecuteNonQuery();
