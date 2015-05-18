@@ -75,20 +75,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Pages\BaseLayout.xaml.cs">
-      <DependentUpon>BaseLayout.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SelectUser.xaml.cs">
-      <DependentUpon>SelectUser.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseCalculatorViewModel.cs" />
-    <Compile Include="ViewModels\BaseLayoutViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\SelectUserEventArgs.cs" />
-    <Compile Include="ViewModels\SelectUserViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,14 +88,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\BaseCalculator.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\BaseLayout.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SelectUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,21 +131,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ConnectionStrings.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Command_Calc\Octagon.Calc_Command.csproj">
       <Project>{ac77dad3-7a88-4f15-8eb7-0bc8e532f49b}</Project>
       <Name>Octagon.Calc_Command</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\Octagon.DAL.csproj">
-      <Project>{abc32650-2ee8-4991-9de1-2f6a7852d56f}</Project>
-      <Name>Octagon.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DLL\Octagon.DLL.csproj">
-      <Project>{0f8f51f0-63ed-43b6-867a-28b6eecd101a}</Project>
-      <Name>Octagon.DLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Octagon\Octagon.BLL.csproj">
       <Project>{c0e2327b-ebdd-4352-9f11-836d1bc78bf7}</Project>

@@ -1,5 +1,5 @@
-﻿using FirstFloor.ModernUI.Windows.Controls;
-using Octagon.Client.ViewModels;
+﻿using System.Windows.Navigation;
+using FirstFloor.ModernUI.Windows.Controls;
 
 namespace Octagon.Client
 {
