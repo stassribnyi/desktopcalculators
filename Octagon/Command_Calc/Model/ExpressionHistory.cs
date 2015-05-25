@@ -6,6 +6,7 @@ using System.Text;
 namespace Command_Calc.Model
 {
     //receiver
+    [Serializable]
     public class ExpressionHistory
     {
         private readonly IList<string> _expressionsList;

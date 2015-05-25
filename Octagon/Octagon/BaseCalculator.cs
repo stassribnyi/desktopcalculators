@@ -54,7 +54,7 @@ namespace Octagon
 
         public double Power(params double[] values)
         {
-            return Math.Pow(values[1],values[0]);
+            return Math.Pow(values[1], values[0]);
         }
     }
 }

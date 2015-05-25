@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using Command_Calc.Model;
+﻿using System;
+using System.Collections.Generic;
 using Command_Calc.Command;
 
 namespace Command_Calc.Model
 {
     //invoker
+    [Serializable]
+
     public class HistoryInvoker
     {
         private readonly IList<BaseCommand> _commands;
@@ -41,6 +43,11 @@ namespace Command_Calc.Model
         public string ReadLast()
         {
             return _expressionHistory.GetLastExpression();
+        }
+
+        public int Count()
+        {
+            return _commands.Count;
         }
     }
 }

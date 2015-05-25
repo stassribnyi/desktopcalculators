@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.Calc_Strategy", "St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octagon.Client", "Octagon.Client\Octagon.Client.csproj", "{855F6486-391B-4FA1-A39C-7AB1A8EB868A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializator", "Serializator\Serializator.csproj", "{5C42AA04-5F11-4427-AB02-EFFAE2B1A026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{855F6486-391B-4FA1-A39C-7AB1A8EB868A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{855F6486-391B-4FA1-A39C-7AB1A8EB868A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{855F6486-391B-4FA1-A39C-7AB1A8EB868A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C42AA04-5F11-4427-AB02-EFFAE2B1A026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C42AA04-5F11-4427-AB02-EFFAE2B1A026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C42AA04-5F11-4427-AB02-EFFAE2B1A026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C42AA04-5F11-4427-AB02-EFFAE2B1A026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

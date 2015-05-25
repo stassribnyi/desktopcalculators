@@ -1,5 +1,0 @@
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\bin\Debug\Octagon.dll
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\bin\Debug\Octagon.pdb
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Debug\Octagon.BLL.csprojResolveAssemblyReference.cache
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Debug\Octagon.dll
-C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Debug\Octagon.pdb

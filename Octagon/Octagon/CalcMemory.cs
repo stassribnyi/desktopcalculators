@@ -1,7 +1,9 @@
-﻿using Octagon.CalculatorCore;
+﻿using System;
+using Octagon.CalculatorCore;
 
 namespace Octagon
 {
+    [Serializable]
     public class CalcMemory : IMemorizeble<double>
     {
         private double _memory;

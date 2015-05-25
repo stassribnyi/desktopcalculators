@@ -66,7 +66,7 @@ namespace Octagon.Solvers
                 
                 return Convert.ToDouble(stack.Pop());
             }
-            else return 0;
+            return 0;
         }
     }
 }

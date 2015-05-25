@@ -1,0 +1,9 @@
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\bin\Release\Serializator.dll
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\bin\Release\Serializator.pdb
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\bin\Release\Command_Calc.exe
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\bin\Release\Octagon.dll
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\bin\Release\Command_Calc.pdb
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\bin\Release\Octagon.pdb
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\obj\Release\Serializator.csprojResolveAssemblyReference.cache
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\obj\Release\Serializator.dll
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Serializator\obj\Release\Serializator.pdb

@@ -1,8 +1,10 @@
-﻿using Command_Calc.Model;
+﻿using System;
+using Command_Calc.Model;
 
 namespace Command_Calc.Command
 {
     //concrete implementation
+    [Serializable]
     public class HistoryEditCommand : BaseCommand
     {
         private readonly ExpressionHistory _expressionHistory;

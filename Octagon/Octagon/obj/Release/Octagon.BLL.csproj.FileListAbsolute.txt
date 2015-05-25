@@ -1,0 +1,4 @@
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\bin\Release\Octagon.dll
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\bin\Release\Octagon.pdb
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Release\Octagon.dll
+C:\Users\Stas\Documents\Visual Studio 2013\Projects\CalculatorProject\Octagon\Octagon\obj\Release\Octagon.pdb

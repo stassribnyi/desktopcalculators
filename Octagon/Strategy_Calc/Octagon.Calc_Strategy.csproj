@@ -118,10 +118,6 @@
       <Project>{c0e2327b-ebdd-4352-9f11-836d1bc78bf7}</Project>
       <Name>Octagon.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OOP_Calc\Octagon.Calc_OOP.csproj">
-      <Project>{a17e57d9-86fc-4b60-8a36-00c29125ade4}</Project>
-      <Name>Octagon.Calc_OOP</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

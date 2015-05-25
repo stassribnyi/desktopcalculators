@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using Command_Calc.Model;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using Serializator.Containers;
 using Strategy_Calc;
 using Strategy_Calc.Validator;
 
@@ -11,23 +13,35 @@ namespace Octagon.Client.ViewModels
     public class BaseCalculatorViewModel : ViewModelBase
     {
         private string _expression;
+        private string _symbol;
         private string _memory;
+
         private int _lvl = -1;
         private int _position = -1;
-
+       
         private ICommand _desideCommand;
         private ICommand _clearCommand;
         private ICommand _undoCommand;
         private ICommand _redoCommand;
-        private ICommand _mrCommand;
-        private ICommand _msCommand;
-        private ICommand _mcCommand;
-        private ICommand _mpCommand;
-        private ICommand _mmCommand;
+        private ICommand _appendCommand;
+        private ICommand _memoryCommand;
 
-        private readonly CalcMemory _calcMemory;
-        private readonly HistoryInvoker _instance;
+        private CalcMemory _calcMemory;
+        private HistoryInvoker _instance;
         private readonly ControlExpression _controlExpression;
+        
+        private delegate void MemoryDelegate();
+        private IDictionary<string, MemoryDelegate> _memoryFunc;
+        
+        public string Symbol
+        {
+            get { return _symbol; }
+            set
+            {
+                _symbol = value;
+                RaisePropertyChanged(() => Symbol);
+            }
+        }
 
         public string Expression
         {
@@ -48,7 +62,7 @@ namespace Octagon.Client.ViewModels
                 RaisePropertyChanged(() => Memory);
             }
         }
-
+        
         public BaseCalculatorViewModel()
         {
             _calcMemory = new CalcMemory();
@@ -56,21 +70,73 @@ namespace Octagon.Client.ViewModels
             _controlExpression = new ControlExpression(new BaseValidator());//does not work fully right, because it need normal regexp
             
             InitCalculator();
-
+            AddMemoryFunc();
         }
-
+        
         private void InitCalculator()
         {
-            Memory ="0";
-            Expression = "0";
+            if (Manager.HistoryAndMemoryContainer!=null)
+            {
+                _calcMemory = Manager.HistoryAndMemoryContainer.CalcMemory;
+                _instance = Manager.HistoryAndMemoryContainer.HistoryInvoker;
+
+                _lvl = _instance.Count()-1;
+                _position = _lvl;
+
+                //init fields
+                Memory = _calcMemory.Memory.ToString();
+                Expression = _instance.ReadLast();
+            }
+            else
+            {
+                Memory = "0";
+                Expression = "0";
+            }
 
         }
 
-        public void AppendValue(string value)
+        private void AddMemoryFunc()
         {
-            if (Expression != "0")
-                Expression += value;
-            else Expression = value;
+            _memoryFunc = new Dictionary<string, MemoryDelegate>
+            {
+                {
+                    "MS", delegate
+                    {
+                        Solve();
+                        _calcMemory.Memory = Convert.ToDouble(Expression);
+                        Memory = _calcMemory.Memory.ToString();
+                    }
+                },
+                {
+                    "MR", delegate
+                    {
+                        Expression = _calcMemory.Memory.ToString();
+                    }
+                },
+                {
+                    "MC", delegate
+                    {
+                        _calcMemory.Memory = 0;
+                        Memory = _calcMemory.Memory.ToString();
+                    }
+                },
+                {
+                    "M+", delegate
+                    {
+                        Solve();
+                        _calcMemory.Memory += Convert.ToDouble(Expression);
+                        Memory = _calcMemory.Memory.ToString();
+                    }
+                },
+                {
+                    "M-", delegate
+                    {
+                        Solve();
+                        _calcMemory.Memory -= Convert.ToDouble(Expression);
+                        Memory = _calcMemory.Memory.ToString();
+                    }
+                }
+            };
         }
 
         private void Solve()
@@ -82,6 +148,10 @@ namespace Octagon.Client.ViewModels
                 _lvl++;
                 _position = _lvl;
             }
+
+            Manager.HistoryAndMemoryContainer = Manager.HistoryAndMemoryContainer ?? new HistoryAndMemoryContainer();
+            Manager.HistoryAndMemoryContainer.CalcMemory = _calcMemory;
+            Manager.HistoryAndMemoryContainer.HistoryInvoker = _instance;
         }
 
         public ICommand DesideCommand
@@ -134,68 +204,23 @@ namespace Octagon.Client.ViewModels
 
         }
 
-        public ICommand MR
+        public ICommand MemoryCommand
         {
             get
             {
-                return _mrCommand ?? (_mrCommand = new RelayCommand(() =>
-                {
-                    Expression = _calcMemory.Memory.ToString();
-                }));
+                return _memoryCommand ?? (_memoryCommand = new RelayCommand<string>((param) => _memoryFunc[param].Invoke()));
             }
         }
 
-        public ICommand MS
+        public ICommand AppendCommand
         {
             get
             {
-                return _msCommand ?? (_msCommand = new RelayCommand(() =>
+                return _appendCommand ?? (_appendCommand = new RelayCommand<string>((param) =>
                 {
-                    Solve();
-                    _calcMemory.Memory = Convert.ToDouble(Expression);
-                    Memory = _calcMemory.Memory.ToString();
-                }));
-            }
-
-        }
-
-        public ICommand MC
-        {
-            get
-            {
-                return _mcCommand ?? (_mcCommand = new RelayCommand(() =>
-                {
-                    _calcMemory.Memory = 0;
-                    Memory = _calcMemory.Memory.ToString();
+                    Expression += param;
                 }));
             }
         }
-
-        public ICommand MP
-        {
-            get
-            {
-                return _mpCommand ?? (_mpCommand = new RelayCommand(() =>
-                {
-                    Solve();
-                    _calcMemory.Memory += Convert.ToDouble(Expression);
-                    Memory = _calcMemory.Memory.ToString();
-                }));
-            }
-        }
-
-        public ICommand MM
-        {
-            get
-            {
-                return _mmCommand ?? (_mmCommand = new RelayCommand(() =>
-                {
-                    Solve();
-                    _calcMemory.Memory -= Convert.ToDouble(Expression);
-                    Memory = _calcMemory.Memory.ToString();
-                }));
-            }
-        }
-
     }
 }
