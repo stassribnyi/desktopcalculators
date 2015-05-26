@@ -10,7 +10,7 @@ namespace Octagon.Client
     /// </summary>
     public partial class MainWindow : ModernWindow
     {
-        private const string Path = @"..\..\data.dat";
+        private const string Path = @"data.dat";
         private BinarySerializator<HistoryAndMemoryContainer> _serializator;
 
         public MainWindow()
